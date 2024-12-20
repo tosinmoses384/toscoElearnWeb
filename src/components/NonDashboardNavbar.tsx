@@ -5,9 +5,7 @@ import React from "react";
 const NonDashboardNavbar = () => {
   return (
     <nav className="nondashboard-navbar">
-
       <div className="nondashboard-navbar__container">
-
         <div className="nondashboard-navbar__search">
           <Link href="/" className="nondashboard-navbar__brand">
             TBOY
@@ -29,15 +27,14 @@ const NonDashboardNavbar = () => {
           </div>
         </div>
 
-      </div>
+        <div className="nondashboard-navbar__actions">
+          <button className="nondashboard-navbar__notification-button">
+            <span className="nondashboard-navbar__notification-indicator"></span>
+            <Bell className="nondashboard-navbar__notification-icon" />
+          </button>
 
-      <div className="nondashboard-navbar__actions">
-        <button className="nondashboard-navbar__notification-button">
-          <span className="nondashboard-navbar__notification-indicator"></span>
-          <Bell className="nondashboard-navbar__notification-icon" />
-        </button>
-
-        {/* SIGN IN BUTTONS */}
+          {/* SIGN IN BUTTONS */}
+        </div>
       </div>
     </nav>
   );

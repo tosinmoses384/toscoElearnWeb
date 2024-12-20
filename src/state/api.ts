@@ -92,7 +92,7 @@ export const api = createApi({
 
     getCourse: build.query<Course, string>({
       query: (id) => `courses/${id}`,
-      providesTags: (result, error, id) => [{ type: "Courses", id }],
+      providesTags: (result, error, id) => [{ type: "Courses", id }], // similar to re-invalidation
     }),
 
     createCourse: build.mutation<

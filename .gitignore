@@ -39,3 +39,18 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+
+
+git commit -m 'feat(startPages): 
+install nextjs
+setup project structure
+> frontend install
+> landing pages
+> data modelling
+> git commit -m 'feat(startPages): 
+install nextjs
+setup project structure
+frontend install
+landing pages
