@@ -1,12 +1,12 @@
 "use client";
 
-import { useRef } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import ReactPlayer from "react-player";
-import Loading from "@/components/Loading";
-import { useCourseProgressData } from "@/hooks/useCourseProgressData";
+// import { useRef } from "react";
+// import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+// import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+// import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+// import ReactPlayer from "react-player";
+// import Loading from "@/components/Loading";
+// import { useCourseProgressData } from "@/hooks/useCourseProgressData";
 
 const Course = () => {
   // const {
@@ -23,25 +23,25 @@ const Course = () => {
   // } = useCourseProgressData();
   // console.log("currentChapter.video:", currentChapter);
 
-  const playerRef = useRef<ReactPlayer>(null);
+  // const playerRef = useRef<ReactPlayer>(null);
 
-  const handleProgress = ({ played }: { played: number }) => {
-    if (
-      played >= 0.8 &&
-      !hasMarkedComplete &&
-      currentChapter &&
-      currentSection &&
-      userProgress?.sections &&
-      !isChapterCompleted()
-    ) {
-      setHasMarkedComplete(true);
-      updateChapterProgress(
-        currentSection.sectionId,
-        currentChapter.chapterId,
-        true
-      );
-    }
-  };
+  // const handleProgress = ({ played }: { played: number }) => {
+  //   if (
+  //     played >= 0.8 &&
+  //     !hasMarkedComplete &&
+  //     currentChapter &&
+  //     currentSection &&
+  //     userProgress?.sections &&
+  //     !isChapterCompleted()
+  //   ) {
+  //     setHasMarkedComplete(true);
+  //     updateChapterProgress(
+  //       currentSection.sectionId,
+  //       currentChapter.chapterId,
+  //       true
+  //     );
+  //   }
+  // };
 
   // if (isLoading) return <Loading />;
   // if (!user) return <div>Please sign in to view this course.</div>;

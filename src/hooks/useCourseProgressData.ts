@@ -1,24 +1,24 @@
-import { useState } from "react";
-import { useParams } from "next/navigation";
-import {
-  useGetCourseQuery,
-  useGetUserCourseProgressQuery,
-  useUpdateUserCourseProgressMutation,
-} from "@/state/api";
+// import { useState } from "react";
+// import { useParams } from "next/navigation";
+// import {
+  // useGetCourseQuery,
+  // useGetUserCourseProgressQuery,
+  // useUpdateUserCourseProgressMutation,
+// } from "@/state/api";
 // import { useUser } from "@clerk/nextjs";
 
 export const useCourseProgressData = () => {
-  const { courseId, chapterId } = useParams();
+  // const { courseId, chapterId } = useParams();
   // const { user, isLoaded } = useUser();
-  const [hasMarkedComplete, setHasMarkedComplete] = useState(false);
-  const [updateProgress] = useUpdateUserCourseProgressMutation();
+  // const [hasMarkedComplete, setHasMarkedComplete] = useState(false);
+  // const [updateProgress] = useUpdateUserCourseProgressMutation();
 
-  const { data: course, isLoading: courseLoading } = useGetCourseQuery(
-    (courseId as string) ?? "",
-    {
-      skip: !courseId,
-    }
-  );
+  // const { data: course, isLoading: courseLoading } = useGetCourseQuery(
+  //   (courseId as string) ?? "",
+  //   {
+  //     skip: !courseId,
+  //   }
+  // );
 
   // const { data: userProgress, isLoading: progressLoading } =
   //   useGetUserCourseProgressQuery(
@@ -33,13 +33,13 @@ export const useCourseProgressData = () => {
 
   // const isLoading = !isLoaded || courseLoading || progressLoading;
 
-  const currentSection = course?.sections.find((s) =>
-    s.chapters.some((c) => c.chapterId === chapterId)
-  );
+  // const currentSection = course?.sections.find((s) =>
+  //   s.chapters.some((c) => c.chapterId === chapterId)
+  // );
 
-  const currentChapter = currentSection?.chapters.find(
-    (c) => c.chapterId === chapterId
-  );
+  // const currentChapter = currentSection?.chapters.find(
+  //   (c) => c.chapterId === chapterId
+  // );
 
   // const isChapterCompleted = () => {
   //   if (!currentSection || !currentChapter || !userProgress?.sections)

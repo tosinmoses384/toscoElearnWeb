@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { BaseQueryApi, FetchArgs } from "@reduxjs/toolkit/query";
-import { User } from "@clerk/nextjs/server";
-import { Clerk } from "@clerk/clerk-js";
+// import { User } from "@clerk/nextjs/server";
+// import { Clerk } from "@clerk/clerk-js";
 import { toast } from "sonner";
 
 const customBaseQuery = async (
@@ -11,13 +11,13 @@ const customBaseQuery = async (
 ) => {
   const baseQuery = fetchBaseQuery({
     baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL,
-    prepareHeaders: async (headers) => {
-      const token = await window.Clerk?.session?.getToken();
-      if (token) {
-        headers.set("Authorization", `Bearer ${token}`);
-      }
-      return headers;
-    },
+    // prepareHeaders: async (headers) => {
+    //   const token = await window.Clerk?.session?.getToken();
+    //   if (token) {
+    //     headers.set("Authorization", `Bearer ${token}`);
+    //   }
+    //   return headers;
+    // },
   });
 
   try {
@@ -90,10 +90,10 @@ export const api = createApi({
       providesTags: ["Courses"],
     }),
 
-    getCourse: build.query<Course, string>({
-      query: (id) => `courses/${id}`,
-      providesTags: (result, error, id) => [{ type: "Courses", id }], // similar to re-invalidation
-    }),
+    // getCourse: build.query<Course, string>({
+    //   query: (id) => `courses/${id}`,
+    //   providesTags: (result, error, id) => [{ type: "Courses", id }], // similar to re-invalidation
+    // }),
 
     createCourse: build.mutation<
       Course,
@@ -107,19 +107,19 @@ export const api = createApi({
       invalidatesTags: ["Courses"],
     }),
 
-    updateCourse: build.mutation<
-      Course,
-      { courseId: string; formData: FormData }
-    >({
-      query: ({ courseId, formData }) => ({
-        url: `courses/${courseId}`,
-        method: "PUT",
-        body: formData,
-      }),
-      invalidatesTags: (result, error, { courseId }) => [
-        { type: "Courses", id: courseId },
-      ],
-    }),
+    // updateCourse: build.mutation<
+    //   Course,
+    //   { courseId: string; formData: FormData }
+    // >({
+    //   query: ({ courseId, formData }) => ({
+    //     url: `courses/${courseId}`,
+    //     method: "PUT",
+    //     body: formData,
+    //   }),
+    //   invalidatesTags: (result, error, { courseId }) => [
+    //     { type: "Courses", id: courseId },
+    //   ],
+    // }),
 
     deleteCourse: build.mutation<{ message: string }, string>({
       query: (courseId) => ({
@@ -236,10 +236,10 @@ export const api = createApi({
 export const {
   useUpdateUserMutation,
   useCreateCourseMutation,
-  useUpdateCourseMutation,
+  // useUpdateCourseMutation,
   useDeleteCourseMutation,
   useGetCoursesQuery,
-  useGetCourseQuery,
+  // useGetCourseQuery,
   useGetUploadVideoUrlMutation,
   useGetTransactionsQuery,
   useCreateTransactionMutation,
