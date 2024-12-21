@@ -9,19 +9,19 @@ import Loading from "@/components/Loading";
 import { useCourseProgressData } from "@/hooks/useCourseProgressData";
 
 const Course = () => {
-  const {
-    user,
-    course,
-    userProgress,
-    currentSection,
-    currentChapter,
-    isLoading,
-    isChapterCompleted,
-    updateChapterProgress,
-    hasMarkedComplete,
-    setHasMarkedComplete,
-  } = useCourseProgressData();
-  console.log("currentChapter.video:", currentChapter);
+  // const {
+  //   user,
+  //   course,
+  //   userProgress,
+  //   currentSection,
+  //   currentChapter,
+  //   isLoading,
+  //   isChapterCompleted,
+  //   updateChapterProgress,
+  //   hasMarkedComplete,
+  //   setHasMarkedComplete,
+  // } = useCourseProgressData();
+  // console.log("currentChapter.video:", currentChapter);
 
   const playerRef = useRef<ReactPlayer>(null);
 
@@ -43,13 +43,13 @@ const Course = () => {
     }
   };
 
-  if (isLoading) return <Loading />;
-  if (!user) return <div>Please sign in to view this course.</div>;
-  if (!course || !userProgress) return <div>Error loading course</div>;
+  // if (isLoading) return <Loading />;
+  // if (!user) return <div>Please sign in to view this course.</div>;
+  // if (!course || !userProgress) return <div>Error loading course</div>;
 
   return (
     <div className="course">
-      <div className="course__container">
+      {/* <div className="course__container">
         <div className="course__breadcrumb">
           <div className="course__path">
             {course.title} / {currentSection?.sectionTitle} /{" "}
@@ -130,7 +130,7 @@ const Course = () => {
                   <CardTitle>Resources Content</CardTitle>
                 </CardHeader>
                 <CardContent className="course__tab-body">
-                  {/* Add resources content here */}
+                 
                 </CardContent>
               </Card>
             </TabsContent>
@@ -141,7 +141,7 @@ const Course = () => {
                   <CardTitle>Quiz Content</CardTitle>
                 </CardHeader>
                 <CardContent className="course__tab-body">
-                  {/* Add quiz content here */}
+                  
                 </CardContent>
               </Card>
             </TabsContent>
@@ -173,7 +173,7 @@ const Course = () => {
             </CardContent>
           </Card>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
